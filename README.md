@@ -1,1 +1,1 @@
-mytodo is a project for taking care of biz. Borrowed from the Yeoman website, it features the use of grunt, bower, bootstrap to make a helpful to-do list. 
+mytodo is a project for taking care of biz. Borrowed from the Yeoman website, it features the use of grunt, bower, and bootstrap to make a helpful to-do list. 
