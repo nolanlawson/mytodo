@@ -8,13 +8,13 @@
  * Controller of the mytodoApp
  */
 angular.module('mytodoApp')
-	.controller('MainCtrl', function($scope, localStorageService) {
-		var todosInStore = localStorageService.get('todos');
+	.controller('MainCtrl', ['$scope', function($scope) {
+		var todosInStore = localStorage['todos'];
 
 		$scope.todos = todosInStore && todosInStore.split('\n') || [];
 
 		$scope.$watch('todos', function() {
-			localStorageService.add('todos', $scope.todos.join('\n'));
+			localStorage['todos'] = $scope.todos.join('\n');
 		}, true);
 
 		$scope.addTodo = function() {
@@ -24,4 +24,4 @@ angular.module('mytodoApp')
 		$scope.removeTodo = function(index) {
 			$scope.todos.splice(index, 1);
 		};
-	});
+	}]);
